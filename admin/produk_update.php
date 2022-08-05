@@ -28,6 +28,7 @@ if($filename == ""){
 		$lama = mysqli_query($koneksi,"select * from produk where produk_id='$id'");
 		$l = mysqli_fetch_assoc($lama);
 		$foto_lama = $l['produk_foto'];
+		
 		unlink('../gambar/produk/'.$foto_lama);
 		// upload foto baru
 		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/produk/'.$rand.'_'.$filename);
